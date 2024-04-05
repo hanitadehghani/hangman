@@ -9,3 +9,7 @@ questions = [{
     "item" : ["MANGO","APPLE","CHERRY"]}
 ]
 
+randomTitle = random.choice(questions)
+randomItem = random.choice(randomTitle["item"])
+print(randomTitle["title"])
+print(randomItem)
