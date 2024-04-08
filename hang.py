@@ -31,6 +31,7 @@ for i in range(len(randomItem)):
     message += "_" 
 chosen_once=[]
 lst = []
+inCorrect = 0
 x = True
 while x:
     print("guess the letter")
@@ -49,7 +50,7 @@ while x:
             word = put_corrects(randomItem,lst)
             message = word
             if word == randomItem:
-                print("you win")
+                print("WELL DONE!")
                 print(message)
                 x = False
                 break
@@ -57,6 +58,11 @@ while x:
             print(True)
             
         else:
+            inCorrect += 1
+            if inCorrect == 6:
+                print("OHH... YOU LOST")
+                x=False
+                break
             print(False)
     
     
