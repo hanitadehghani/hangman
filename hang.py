@@ -26,15 +26,13 @@ questions = [{
 
 randomTitle = random.choice(questions)
 randomItem = random.choice(randomTitle["item"])
-# print(randomTitle["title"])
-# print(randomItem)
 message = ""
 for i in range(len(randomItem)):
     message += "_" 
 chosen_once=[]
 lst = []
-while True:
-    
+x = True
+while x:
     print("guess the letter")
     print(message)
     userGuess = input("what is the {} word?".format(randomTitle["title"]))
@@ -43,8 +41,7 @@ while True:
         print("try again")
         continue
     chosen_once.append(userGuess)
-    
-  
+    print(chosen_once)
     
     for j in userGuess:
         if j.upper() in randomItem:
@@ -53,11 +50,11 @@ while True:
             message = word
             if word == randomItem:
                 print("you win")
+                x = False
                 break
-            
-            
             print(True)
+            
         else:
             print(False)
-
-    print(chosen_once)
+    
+    
