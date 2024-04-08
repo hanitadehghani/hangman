@@ -30,12 +30,19 @@ randomItem = random.choice(randomTitle["item"])
 # print(randomItem)
 message = ""
 for i in range(len(randomItem)):
-    message += "_ " 
-
+    message += "_" 
+chosen_once=[]
 while True:
+    
     print("guess the letter")
     print(message)
     userGuess = input("what is the {} word?".format(randomTitle["title"]))
+    if userGuess in chosen_once:
+        print("Already chosen")
+        print("try again")
+        continue
+    chosen_once.append(userGuess)
+    
   
 
     for j in userGuess:
@@ -45,4 +52,4 @@ while True:
         else:
             print(False)
 
-
+    print(chosen_once)
