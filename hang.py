@@ -1,6 +1,19 @@
 import random
 
-
+def put_corrects(word,lst):
+    correct = ""
+    for i in lst:
+        for j in word:
+            if i == j:
+                correct += i
+    finalCorrect = ""
+    for p in word:
+        if not p in correct:
+            finalCorrect+="_"
+        else:
+            finalCorrect+=p
+            
+    return finalCorrect
 
 questions = [{
     'title': "food",
@@ -17,15 +30,17 @@ randomItem = random.choice(randomTitle["item"])
 # print(randomItem)
 message = ""
 for i in range(len(randomItem)):
-    message += "_" + " "
+    message += "_ " 
+
 while True:
     print("guess the letter")
     print(message)
     userGuess = input("what is the {} word?".format(randomTitle["title"]))
   
 
-    for i in userGuess:
-        if i.upper() in randomItem:
+    for j in userGuess:
+        if j.upper() in randomItem:
+       
             print(True)
         else:
             print(False)
