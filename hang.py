@@ -50,8 +50,10 @@ while x:
             message = word
             if word == randomItem:
                 print("you win")
+                print(message)
                 x = False
                 break
+   
             print(True)
             
         else:
