@@ -29,6 +29,12 @@ randomItem = random.choice(randomTitle["item"])
 message = ""
 for i in range(len(randomItem)):
     message += "_" 
+
+letters = []
+
+
+
+
 chosen_once=[]
 lst = []
 inCorrect = 0
@@ -58,11 +64,64 @@ while x:
             print(True)
             
         else:
+            HANGMANPICS = ['''
+                              +---+
+                              |   |
+                                  |
+                                  |
+                                  |
+                                  |
+                            =========''', '''
+                              +---+
+                              |   |
+                              O   |
+                                  |
+                                  |
+                                  |
+                            =========''', '''
+                              +---+
+                              |   |
+                              O   |
+                              |   |
+                                  |
+                                  |
+                            =========''', '''
+                              +---+
+                              |   |
+                              O   |
+                             /|   |
+                                  |
+                                  |
+                            =========''', '''
+                              +---+
+                              |   |
+                              O   |
+                             /|\  |
+                                  |
+                                  |
+                            =========''', '''
+                              +---+
+                             |   |
+                             O   |
+                            /|\  |
+                            /    |
+                                 |
+                            ========''', '''
+                             +---+
+                             |   |
+                             O   |
+                            /|\  |
+                            / \  |
+                              |
+                        =========''']
+
             inCorrect += 1
-            if inCorrect == 6:
+            print(HANGMANPICS[inCorrect-1])
+            if inCorrect == 7:
                 print("OHH... YOU LOST")
                 x=False
                 break
-            print(False)
+               
+                
     
     
