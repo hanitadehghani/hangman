@@ -32,6 +32,7 @@ message = ""
 for i in range(len(randomItem)):
     message += "_" 
 chosen_once=[]
+lst = []
 while True:
     
     print("guess the letter")
@@ -44,10 +45,17 @@ while True:
     chosen_once.append(userGuess)
     
   
-
+    
     for j in userGuess:
         if j.upper() in randomItem:
-       
+            lst.append(j.upper())
+            word = put_corrects(randomItem,lst)
+            message = word
+            if word == randomItem:
+                print("you win")
+                break
+            
+            
             print(True)
         else:
             print(False)
